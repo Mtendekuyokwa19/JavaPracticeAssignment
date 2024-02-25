@@ -1,1 +1,1 @@
-Js Practice assignment
+Java Practice assignment
