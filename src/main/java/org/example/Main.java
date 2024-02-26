@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -10,8 +12,20 @@ public class Main {
 
 //        System.out.println(discount(600,10.578879876));
 //        System.out.println(numberOfTrueValue(new boolean[] {true,false,false}));
-        System.out.println(calculateNumber(9,3,'/'));
+//        System.out.println(calculateNumber(9,3,'/'));
+//        System.out.println(countDs("The Dogs dont feels"));
 
+//        System.out.println(match("Hello","heLLo"));
+
+//        System.out.println(isPrural("Moneys"));
+//        int number= (int) 9.94;
+//        System.out.println(number);
+
+//        System.out.println(totalCups(213));
+
+//        System.out.println(howManywalls(100,4,5));
+
+        System.out.println(isPrime(23));
     }
 
     //62
@@ -109,5 +123,89 @@ public class Main {
     }
 
     //57
+
+    public static int countDs(String sentence){
+        int countTheDsInSetences=0;
+     String jack=sentence.toUpperCase();
+        for (char letterInSetence :jack.toCharArray()){
+
+            if (letterInSetence=='D'){
+                countTheDsInSetences++;
+
+            }
+
+
+        }
+
+        return countTheDsInSetences;
+
+    }
+
+    //56
+    public static boolean match(String firstWord,String secondWord){
+
+        firstWord=firstWord.toLowerCase();
+        secondWord=secondWord.toLowerCase();
+
+        if (secondWord.equals(firstWord)){
+
+            return true;
+        }
+
+        return false;
+
+    }
+
+    //55
+
+    public static boolean isPrural(String word){
+        word=word.toUpperCase();
+        String[] arryOfChar=word.split("");
+        int sizeOfArray=word.length();
+        if (arryOfChar[sizeOfArray-1].equals("S")){
+            return true;
+        }
+        return false;
+
+    }
+
+    //54
+
+    public  static int totalCups(int cupsBought){
+
+        int totalExtracups=cupsBought/6;
+        cupsBought=totalExtracups+cupsBought;
+
+        return  cupsBought;
+    }
+
+    //50
+
+    public static int howManywalls(int icanManagetoPaint, double width,double  height){
+
+        double areaOfwall=width*height;
+        return (int)(icanManagetoPaint/areaOfwall);
+    }
+
+
+    //37
+    public static boolean isPrime(int n){
+
+        if (n <= 1)
+            return false;
+
+        if (n == 2 || n == 3)
+            return true;
+
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+
+        for (int i = 5; i <= Math.sqrt(n); i = i + 6)
+            if (n % i == 0 || n % (i + 2) == 0)
+                return false;
+
+        return true;
+    }
+
 }
 
